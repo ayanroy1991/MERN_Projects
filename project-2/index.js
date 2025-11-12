@@ -8,10 +8,11 @@ toggleBtn.addEventListener("click", () => {
 
 const typedTextSpan = document.querySelector(".typed-text");
 const textArray = [
-  "Software Engineer",
-  "Project Manager",
-  "Web Developer",
-  "Category Lead",
+  "Reinforcement Learning Researcher",
+  "Mechanical Engineer",
+  "Automotive Quality Specialist",
+  "Supply Chain Manager",
+  "Team Lead",
 ];
 
 const typingDelay = 50;

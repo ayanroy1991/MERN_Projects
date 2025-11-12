@@ -191,16 +191,20 @@ h2 {
   transform: scale(1.1);
 }
 
+
+
 .overlay {
   position: absolute;
-  inset: 0;
-  background: rgb(0, 0, 0, 0.8);
+  inset: 2px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.45));
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 .work-card:hover .overlay {
   opacity: 1;
@@ -339,4 +343,121 @@ h2 {
 .testimonial-card span {
   color: var(--accent-color);
   font-size: 1rem;
+}
+
+/* ensure a centered container used across sections */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* contact section layout */
+.contact {
+  padding: 80px 0;
+  text-align: center; /* keeps the section heading centered */
+}
+.contact h2 {
+  margin-bottom: 24px;
+}
+/* center the grid within the container so content is inline with other sections */
+.contact .contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto; /* center the grid */
+  text-align: left; /* keep form and contact info left-aligned for readability */
+}
+
+/* optional: tighten spacing for the contact info and form */
+.contact .contact-info p,
+.contact .contact-info ul {
+  margin-bottom: 12px;
+}
+
+
+/* contact form styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form label {
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #0e3959;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.form-actions button {
+  flex: 1;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: #0e3959;
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #0b2c45;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #0e3959;
+  border: 2px solid #0e3959;
+}
+
+.btn-outline:hover {
+  background: #0e3959;
+  color: #fff;
+}
+
+/* responsive adjustments */
+@media (max-width: 600px) {
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .form-actions button {
+    width: 100%;
+  }
 }
